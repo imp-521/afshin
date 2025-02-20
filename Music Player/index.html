@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav class="circle">
+                <div class="icon">
+                    <img style="margin: -18px -14px; width: 46px;" src="assets/img/angle-left-svgrepo-com.svg" alt="">
+                </div>
+                <div class="icon">
+                    <img style="padding-top: 8px; width: 24px;" src="assets/img/menu-burger-svgrepo-com.svg" alt="">
+                </div>
+            </nav>
+            <img src="assets/img/علی+یاسینی.jpg" class="img-ali">
+            <h1>Ali Yasini</h1>
+            <p>Cheraghooni</p>
+
+            <audio  id="song">
+                <source src="./assets/img/Ali Yasini - Cheraghooni.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress">
+            <div class="controls">
+                <div><img style="width: 22px;" src="assets/img/backward-svgrepo-com.svg"></div>
+                <div onclick="playPause()" id="ctrlIcon"><img style="width: 22px;" src="assets/img/play-svgrepo-com (2).svg"></div>
+                <div><img style="width: 22px;" src="assets/img/forward-svgrepo-com.svg"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let progress = document.getElementById('progress');
+        let song = document.getElementById('song');
+        let ctrlIcon = document.getElementById('ctrlIcon').getElementsByTagName('img')[0];
+
+        song.onloadedmetadata = function() {
+            progress.max = song.duration;
+            progress.value = song.currentTime; 
+        };
+
+        song.ontimeupdate = function() {
+            progress.value = song.currentTime; 
+        };
+
+        function playPause() {
+            if (song.paused) {
+                song.play();
+                ctrlIcon.src = "assets/img/pause-alt-svgrepo-com.svg"; // تغییر آیکون به "pause"
+            } else {
+                song.pause();
+                ctrlIcon.src = "assets/img/play-svgrepo-com (2).svg"; // تغییر آیکون به "play"
+            }
+        }
+
+
+        progress.onchange=function(){
+            song.play()
+            song.currentTime = progress.value;
+            ctrlIcon.src = "assets/img/pause-alt-svgrepo-com.svg";
+
+        }
+    </script>
+</body>
+
+
+</html>
