@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Popup Example</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .container {
+                width: 100%;
+                height: 100vh;
+                background: #3c5077;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .btn {
+                padding: 10px 60px;
+                background: #fff;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                font-size: 22px;
+                font-weight: 500;
+                border-radius: 30px;
+            }
+    
+            .Popup button {
+                outline: 0;
+                border: none;
+                cursor: pointer;
+                padding: 10px 60px;
+                background: #fff;
+                font-size: 22px;
+                font-weight: 500;
+                border-radius: 30px;
+            }
+    
+            .Popup {
+                width: 400px;
+                background: #fff;
+                border-radius: 6px;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.1);
+                text-align: center;
+                padding: 0 30px 30px;
+                color: #333;
+                position: absolute;
+                visibility: hidden; /* پنهان کردن پیش‌فرض */
+                transition: transform 0.4s, top 0.4s;
+            }
+    
+            .show-popup {
+                visibility: visible; /* نمایش پاپ‌آپ */
+                top: 50%;
+                transform: translate(-50%, -50%) scale(1); /* مقیاس نهایی */
+            }
+    
+            .Popup img {
+                width: 100px;
+                margin-top: -50px;
+                border-radius: 50%;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+    
+            .Popup h2 {
+                font-size: 38px;
+                font-weight: 500;
+                margin: 30px 0 10px;
+            }
+    
+            .Popup button {
+                width: 100%;
+                margin-top: 50px;
+                padding: 10px 0;
+                background: #6fd649;
+                color: #fff;
+                border: 0;
+                outline: 0;
+                font-size: 18px;
+                border-radius: 4px;
+                cursor: pointer;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <button onclick="showPopup()" class="btn" type="submit">Submit</button>
+       
+                <div class="Popup">
+                    <img src="./assets/img/photo_2024-12-11_12-35-04.jpg" alt="Image">
+                    <h2>Thank You!</h2>
+                    <p>Your details have been successfully submitted. Thanks!</p>
+                    <button onclick="closePopup()" type="button">OK</button>
+                </div>
+    
+    
+    
+        <script>
+            let popup = document.getElementsByClassName("Popup")[0]; // دسترسی به اولین عنصر با کلاس Popup
+    
+            function showPopup() {
+                popup.classList.add("show-popup"); // اضافه کردن کلاس برای نمایش پاپ‌آپ
+            }
+    
+            function closePopup() {
+                popup.classList.remove("show-popup"); // حذف کلاس برای پنهان کردن پاپ‌آپ
+            }
+        </script>
+    </body>
+    </html>
+    
