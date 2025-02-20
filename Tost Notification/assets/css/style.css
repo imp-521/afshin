@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Sriracha&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Protest Revolution", sans-serif;
+}
+
+body {
+    background: #1ac281;
+}
+
+.my-buttons {
+    margin-top: 39px;
+    margin-left: 56px;
+}
+
+.my-buttons button {
+    padding: 9px 31px;
+    margin: 3px;
+    border: none;
+    background: #080808;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.toastBox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.box {
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+}
